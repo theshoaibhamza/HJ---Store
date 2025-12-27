@@ -1,0 +1,190 @@
+/**
+ * Responsive Utilities
+ */
+
+/* Responsive Display */
+@media (max-width: 639px) {
+  .sm\:hidden { display: none !important; }
+}
+
+@media (min-width: 640px) {
+  .sm\:block { display: block; }
+  .sm\:flex { display: flex; }
+  .sm\:grid { display: grid; }
+  .sm\:hidden { display: none !important; }
+}
+
+@media (max-width: 767px) {
+  .md\:hidden { display: none !important; }
+}
+
+@media (min-width: 768px) {
+  .md\:block { display: block; }
+  .md\:flex { display: flex; }
+  .md\:grid { display: grid; }
+  .md\:hidden { display: none !important; }
+}
+
+@media (max-width: 1023px) {
+  .lg\:hidden { display: none !important; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:block { display: block; }
+  .lg\:flex { display: flex; }
+  .lg\:grid { display: grid; }
+  .lg\:hidden { display: none !important; }
+}
+
+@media (min-width: 1280px) {
+  .xl\:block { display: block; }
+  .xl\:flex { display: flex; }
+  .xl\:grid { display: grid; }
+  .xl\:hidden { display: none !important; }
+}
+
+/* Mobile Only */
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* Desktop Only */
+@media (max-width: 767px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* Touch Device Detection */
+@media (hover: none) and (pointer: coarse) {
+  .touch-hidden {
+    display: none !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .touch-only {
+    display:  none !important;
+  }
+}
+
+/* Container Responsive */
+@media (min-width: 640px) {
+  .container {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left:  var(--spacing-8);
+    padding-right: var(--spacing-8);
+  }
+}
+
+/* Responsive Text */
+@media (max-width:  767px) {
+  .text-responsive-sm {
+    font-size: var(--font-size-sm);
+  }
+  
+  .text-responsive-base {
+    font-size: var(--font-size-base);
+  }
+  
+  .text-responsive-lg {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display:  block !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  . header,
+  .footer,
+  .announcement-bar,
+  . mobile-menu,
+  .modal,
+  .drawer,
+  .cookie-banner,
+  .toast-container {
+    display: none !important;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:: before,
+  *::after {
+    animation-duration: 0.01ms ! important;
+    animation-iteration-count:  1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .hero__scroll svg,
+  .spinner,
+  [data-reveal] {
+    animation: none !important;
+  }
+  
+  [data-reveal] {
+    opacity: 1 ! important;
+    transform: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast:  high) {
+  : root {
+    --color-primary: #000;
+    --color-text: #000;
+    --color-border: #000;
+  }
+  
+  .btn {
+    border-width: 3px;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* Landscape Orientation on Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  . hero__controls {
+    bottom: var(--spacing-4);
+  }
+  
+  .hero__scroll {
+    display: none;
+  }
+}

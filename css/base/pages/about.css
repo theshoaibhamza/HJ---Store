@@ -1,0 +1,234 @@
+/**
+ * About Page Styles
+ */
+
+/* About Hero Section */
+.about-hero {
+  padding: var(--spacing-16) 0 var(--spacing-12);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+  text-align: center;
+}
+
+.about-hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-hero__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-6);
+  line-height: var(--line-height-tight);
+}
+
+.about-hero__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* About Content */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-content__text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+}
+
+.about-content__text p {
+  margin-bottom: var(--spacing-4);
+}
+
+.about-content__text p:last-child {
+  margin-bottom: 0;
+}
+
+/* About Images */
+.about-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Contact Info */
+.contact-info {
+  margin-top: var(--spacing-8);
+  padding: var(--spacing-6);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+}
+
+.contact-info h3 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-4);
+}
+
+.contact-info p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-2);
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info strong {
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Feature Cards */
+.feature-card {
+  text-align: center;
+  padding: var(--spacing-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-6);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  color: var(--color-white);
+}
+
+.feature-card__icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.feature-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-3);
+}
+
+.feature-card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* Map Placeholder */
+.map-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.map-placeholder svg {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+  .about-hero__title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .about-hero__description {
+    font-size: var(--font-size-base);
+  }
+
+  .feature-card {
+    padding: var(--spacing-4);
+  }
+  
+  .feature-card__icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .feature-card__icon svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-hero {
+    padding: var(--spacing-12) 0 var(--spacing-8);
+  }
+  
+  .about-hero__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .about-grid--2 {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  .about-grid--3 {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+
+  .about-image {
+    order: -1;
+  }
+
+  .contact-info {
+    margin-top: var(--spacing-6);
+    padding: var(--spacing-4);
+  }
+  
+  .feature-card {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+  
+  .map-placeholder {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: var(--spacing-8) 0 var(--spacing-6);
+  }
+  
+  .about-hero__title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .about-section {
+    padding: var(--spacing-8) 0;
+  }
+}

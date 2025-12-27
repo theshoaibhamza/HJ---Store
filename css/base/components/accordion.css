@@ -1,0 +1,115 @@
+
+/* Modern FAQ Accordion Styles */
+
+.accordion {
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  margin-bottom: 0.25em;
+  box-shadow: var(--shadow-xs);
+  border: 1.5px solid var(--color-border);
+  overflow: hidden;
+  transition: box-shadow 0.25s, border-color 0.25s;
+}
+
+.accordion:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+.accordion[open] {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.accordion__toggle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.05em var(--spacing-2) 0.05em var(--spacing-2);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--color-text);
+  transition: color 0.2s;
+  position: relative;
+}
+
+
+/* .accordion__toggle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.05em var(--spacing-2) 0.05em var(--spacing-2);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--color-text);
+  transition: color 0.2s;
+  position: relative;
+} */
+
+.accordion__toggle:hover, .accordion__toggle:focus {
+  color: var(--color-primary);
+}
+
+.animated-plus {
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+.animated-plus::before, .animated-plus::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+.animated-plus::before {
+  top: 50%; left: 0; right: 0; height: 3px; transform: translateY(-50%);
+}
+.animated-plus::after {
+  left: 50%; top: 0; bottom: 0; width: 3px; transform: translateX(-50%);
+}
+.accordion[open] .animated-plus {
+  transform: rotate(45deg);
+}
+
+
+.accordion__content {
+  padding: 0 var(--spacing-3) 0.35em var(--spacing-3);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s;
+  animation: fadeIn 0.28s ease;
+}
+.accordion:not([open]) .accordion__content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.accordion__content p {
+  margin-bottom: var(--spacing-3);
+}
+.accordion__content p:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
