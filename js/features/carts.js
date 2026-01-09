@@ -214,6 +214,86 @@ export class Cart {
         price: 20100,
         image:  'https://chandnijewellery.com.au/cdn/shop/files/Nabah_White_Necklace_Set.jpg?width=200',
         variant: 'White'
+      },
+      'maira-necklace-set': {
+        id: 'maira-necklace-1',
+        handle: 'maira-necklace-set',
+        title: 'Maira Necklace Set',
+        price: 18500,
+        image: 'https://chandnijewellery.com.au/cdn/shop/files/MairaNecklaceSet1.jpg?width=200',
+        variant: 'Ruby'
+      },
+      'ayesha-necklace-set': {
+        id: 'ayesha-necklace-1',
+        handle: 'ayesha-necklace-set',
+        title: 'Ayesha Necklace Set',
+        price: 15200,
+        image: 'https://chandnijewellery.com.au/cdn/shop/files/AyeshaNecklaceSet1.jpg?width=200',
+        variant: 'Mint'
+      },
+      'vinaya-necklace-set': {
+        id: 'vinaya-necklace-1',
+        handle: 'vinaya-necklace-set',
+        title: 'Vinaya Necklace Set',
+        price: 12500,
+        image: 'https://chandnijewellery.com.au/cdn/shop/files/Vinaya_Necklace_Set.jpg?width=200',
+        variant: 'Silver'
+      },
+      'sunaina-necklace-set': {
+        id: 'sunaina-necklace-1',
+        handle: 'sunaina-necklace-set',
+        title: 'Sunaina Necklace Set',
+        price: 32100,
+        image: 'https://chandnijewellery.com.au/cdn/shop/files/Sunaina_Necklace_Set.jpg?width=200',
+        variant: 'Gold'
+      },
+      'giva-necklace-set': {
+        id: 'giva-necklace-1',
+        handle: 'giva-necklace-set',
+        title: 'Giva Necklace Set',
+        price: 21000,
+        image: 'https://chandnijewellery.com.au/cdn/shop/files/Giva_Necklace_Set.jpg?width=200',
+        variant: 'Gold'
+      },
+      'usha-necklace-set': {
+        id: 'usha-necklace-1',
+        handle: 'usha-necklace-set',
+        title: 'Usha Necklace Set',
+        price: 6900,
+        image: 'https://chandnijewellery.com.au/cdn/shop/files/Usha_Necklace_Set.jpg?width=200',
+        variant: 'Gold'
+      },
+      'radhika-waistband': {
+        id: 'radhika-waistband-1',
+        handle: 'radhika-waistband',
+        title: 'Radhika Waistband',
+        price: 9600,
+        image: 'https://chandnijewellery.com.au/cdn/shop/files/Radhika_Waistband.jpg?width=200',
+        variant: 'Gold'
+      },
+      'sarojini-waistband': {
+        id: 'sarojini-waistband-1',
+        handle: 'sarojini-waistband',
+        title: 'Sarojini Waistband',
+        price: 8100,
+        image: 'https://chandnijewellery.com.au/cdn/shop/files/Sarojini_Waistband.jpg?width=200',
+        variant: 'Gold'
+      },
+      'nargis-waistband': {
+        id: 'nargis-waistband-1',
+        handle: 'nargis-waistband',
+        title: 'Nargis Waistband',
+        price: 13400,
+        image: 'https://chandnijewellery.com.au/cdn/shop/files/Nargis_Waistband.jpg?width=200',
+        variant: 'Gold'
+      },
+      'laghima-waistband': {
+        id: 'laghima-waistband-1',
+        handle: 'laghima-waistband',
+        title: 'Laghima Waistband',
+        price: 23900,
+        image: 'https://chandnijewellery.com.au/cdn/shop/files/Laghima_Waistband.jpg?width=200',
+        variant: 'Gold'
       }
     };
 

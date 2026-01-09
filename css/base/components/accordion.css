@@ -23,11 +23,11 @@
 
 .accordion__toggle {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.05em var(--spacing-2) 0.05em var(--spacing-2);
-  font-size: var(--font-size-lg);
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
   background: none;
@@ -38,6 +38,11 @@
   position: relative;
 }
 
+.accordion__toggle .text-with-icon {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
 
 /* .accordion__toggle {
   display: flex;
@@ -61,10 +66,13 @@
 }
 
 .animated-plus {
-  display: inline-block;
-  width: 0.75em;
-  height: 0.75em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
   position: relative;
+  flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(.4,0,.2,1);
 }
 

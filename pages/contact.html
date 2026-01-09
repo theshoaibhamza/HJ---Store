@@ -363,6 +363,99 @@
   <!-- Toast Container -->
   <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
+  <!-- Search Modal -->
+  <div class="modal modal--search" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="searchModalTitle">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title" id="searchModalTitle">Search</h2>
+        <button type="button" class="modal__close" aria-label="Close search" data-modal-close>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 2L18 18M18 2L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal__body">
+        <form class="search-form" action="collection.html" method="GET" role="search" data-search-form>
+          <div class="search-form__input-wrapper">
+            <svg class="search-form__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5" />
+              <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <input type="search" name="q" class="search-form__input" placeholder="Search for products..."
+              autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-search-input>
+            <button type="button" class="search-form__clear" aria-label="Clear search" data-search-clear hidden>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.1" />
+                <path d="M5 5L11 11M11 5L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <div class="search-results" data-search-results>
+          <div class="search-results__popular">
+            <h3 class="search-results__heading">Popular Searches</h3>
+            <ul class="search-results__tags">
+              <li><a href="shop-now/bangles.html" class="search-results__tag">Bangles</a></li>
+              <li><a href="shop-now/necklaces.html" class="search-results__tag">Necklace Sets</a></li>
+              <li><a href="shop-now/tikka_set.html" class="search-results__tag">Tikka Sets</a></li>
+              <li><a href="shop-now/earrings.html" class="search-results__tag">Earrings</a></li>
+              <li><a href="shop-now/payals.html" class="search-results__tag">Payals</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="drawer drawer--cart" id="cartDrawer" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="cartDrawerTitle">
+    <div class="drawer__overlay" data-drawer-close></div>
+    <div class="drawer__panel">
+      <div class="drawer__header">
+        <h2 class="drawer__title" id="cartDrawerTitle">
+          Your Cart
+          <span class="drawer__count" data-cart-drawer-count>(0)</span>
+        </h2>
+        <button type="button" class="drawer__close" aria-label="Close cart" data-drawer-close>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 2L18 18M18 2L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="drawer__body" data-cart-drawer-body>
+        <div class="cart-empty" data-cart-empty>
+          <div class="cart-empty__icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2" opacity="0.2" />
+              <path d="M20 24V22C20 17.5817 23.5817 14 28 14H36C40.4183 14 44 17.5817 44 22V24M16 24H48L46 50H18L16 24Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3 class="cart-empty__title">Your cart is empty</h3>
+          <p class="cart-empty__text">Looks like you haven't added anything to your cart yet.</p>
+          <a href="collection.html" class="btn btn--primary" data-drawer-close>Start Shopping</a>
+        </div>
+        <div class="cart-items" data-cart-items hidden></div>
+      </div>
+      <div class="drawer__footer" data-cart-drawer-footer hidden>
+        <div class="cart-summary">
+          <div class="cart-summary__row">
+            <span class="cart-summary__label">Subtotal</span>
+            <span class="cart-summary__value" data-cart-subtotal>Rs. 0.00 PKR</span>
+          </div>
+          <p class="cart-summary__note">Shipping & taxes calculated at checkout</p>
+        </div>
+        <div class="cart-actions">
+          <a href="cart.html" class="btn btn--secondary btn--full">View Cart</a>
+          <a href="#" class="btn btn--primary btn--full">Checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="../js/app.js" type="module"></script>
   

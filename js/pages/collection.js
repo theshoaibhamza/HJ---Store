@@ -113,6 +113,12 @@ class CollectionController {
             clearAllBtn.addEventListener('click', this.clearAllFilters.bind(this));
         }
 
+        // Clear filters button in sidebar
+        const clearFilterBtn = document.querySelector('[data-filter-clear]');
+        if (clearFilterBtn) {
+            clearFilterBtn.addEventListener('click', this.clearAllFilters.bind(this));
+        }
+
         // Filter group toggles
         document.addEventListener('click', (e) => {
             if (e.target.closest('[data-filter-toggle]')) {

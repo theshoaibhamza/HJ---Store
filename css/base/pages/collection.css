@@ -1150,8 +1150,13 @@
   color: var(--color-primary);
 }
 
-/* Collection Grid */
+/* Collection Grid Section */
 .collection-grid {
+  padding: var(--spacing-8) 0;
+}
+
+/* Collection Products Section (for shop-now pages without sidebar) */
+.collection-products-section {
   padding: var(--spacing-8) 0;
 }
 
@@ -1259,7 +1264,8 @@
   transition: opacity var(--transition-base);
 }
 
-.product-card:hover .product-card__image--primary {
+/* Only hide primary image when secondary image exists */
+.product-card:hover .product-card__media:has(.product-card__image--secondary) .product-card__image--primary {
   opacity: 0;
 }
 

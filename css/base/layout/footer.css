@@ -65,6 +65,70 @@
   transform: rotate(180deg);
 }
 
+/* Footer FAQ List (Quick Answers) */
+.footer__faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.footer__faq-list .footer__faq-item {
+  display: block;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+
+.footer__faq-list .footer__faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  opacity: 0.8;
+  cursor: pointer;
+  padding: var(--spacing-2) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: opacity var(--transition-fast);
+  list-style: none;
+}
+
+.footer__faq-list .footer__faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.footer__faq-list .footer__faq-question::after {
+  content: '›';
+  font-size: var(--font-size-base);
+  transition: transform var(--transition-fast);
+}
+
+.footer__faq-list .footer__faq-item[open] .footer__faq-question::after {
+  transform: rotate(90deg);
+}
+
+.footer__faq-list .footer__faq-question:hover {
+  opacity: 1;
+}
+
+.footer__faq-list .footer__faq-answer {
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
+  padding: var(--spacing-2) 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer__faq-list .footer__faq-answer a {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.footer__faq-list .footer__faq-answer a:hover {
+  opacity: 1;
+}
+
 /* Footer Main */
 .footer__main {
   margin-bottom: var(--spacing-12);
@@ -80,22 +144,23 @@
 
 @media (min-width: 768px) {
   .footer__links {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     max-width: none;
   }
 }
 
 .footer__column {
   min-width: 0;
+  margin-top: var(--spacing-8);
 }
 
 .footer__heading {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wider);
-  margin-bottom: var(--spacing-4);
-  opacity: 0.7;
+  margin-bottom: var(--spacing-5);
+  opacity: 0.9;
 }
 
 .footer__list {

@@ -45,6 +45,21 @@ export class Search {
   }
 
   /**
+   * Get the correct path to collection.html based on current page location
+   * @returns {string} Path to collection page
+   */
+  getCollectionPath() {
+    const path = window.location.pathname;
+    if (path.includes('/pages/shop-now/')) {
+      return '../collection.html';
+    } else if (path.includes('/pages/')) {
+      return 'collection.html';
+    } else {
+      return 'pages/collection.html';
+    }
+  }
+
+  /**
    * Initialize search
    */
   init() {
@@ -314,7 +329,7 @@ export class Search {
           `;
           }).join('')}
         </ul>
-        <a href="/search?q=${encodeURIComponent(query)}" class="search-results__view-all">
+        <a href="${this.getCollectionPath()}?q=${encodeURIComponent(query)}" class="search-results__view-all">
           View all results
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8h8M8 4l4 4-4 4" stroke="currentColor" stroke-width="2"/></svg>
         </a>
@@ -341,15 +356,16 @@ export class Search {
   showPopularSearches() {
     if (!this.resultsContainer) return;
 
+    const collectionPath = this.getCollectionPath();
     this.resultsContainer.innerHTML = `
       <div class="search-results__popular">
         <h3 class="search-results__heading">Popular Searches</h3>
         <ul class="search-results__tags">
-          <li><a href="/search?q=bangles" class="search-results__tag">Bangles</a></li>
-          <li><a href="/search?q=necklace" class="search-results__tag">Necklace Sets</a></li>
-          <li><a href="/search?q=tikka" class="search-results__tag">Tikka Sets</a></li>
-          <li><a href="/search?q=bridal" class="search-results__tag">Bridal</a></li>
-          <li><a href="/search?q=earrings" class="search-results__tag">Earrings</a></li>
+          <li><a href="${collectionPath}?q=bangles" class="search-results__tag">Bangles</a></li>
+          <li><a href="${collectionPath}?q=necklace" class="search-results__tag">Necklace Sets</a></li>
+          <li><a href="${collectionPath}?q=tikka" class="search-results__tag">Tikka Sets</a></li>
+          <li><a href="${collectionPath}?q=bridal" class="search-results__tag">Bridal</a></li>
+          <li><a href="${collectionPath}?q=earrings" class="search-results__tag">Earrings</a></li>
         </ul>
       </div>
     `;

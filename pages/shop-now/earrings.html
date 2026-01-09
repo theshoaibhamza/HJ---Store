@@ -148,195 +148,381 @@
       </div>
     </section>
 
-    <!-- Collection Filters -->
-    <section class="collection-filters">
+    <!-- Collection Content -->
+    <section class="section collection-section">
       <div class="container">
-        <div class="filters">
-          <div class="filters__header">
-            <h2 class="filters__title">Filter Products</h2>
-            <button class="filters__toggle" data-filters-toggle>
-              <span>Filters</span>
-              <svg width="16" height="16" viewBox="0 0 16 16">
-                <path d="M2 4L8 10L14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
-            </button>
-          </div>
+        <div class="collection-layout">
           
-          <div class="filters__content" data-filters-content>
-            <div class="filters__group">
-              <h3 class="filters__group-title">Style</h3>
-              <div class="filters__options">
-                <label class="filter-option">
-                  <input type="checkbox" value="jhumka" data-filter="style">
-                  <span class="filter-option__text">Jhumka</span>
-                </label>
-                <label class="filter-option">
-                  <input type="checkbox" value="chandelier" data-filter="style">
-                  <span class="filter-option__text">Chandelier</span>
-                </label>
-                <label class="filter-option">
-                  <input type="checkbox" value="studs" data-filter="style">
-                  <span class="filter-option__text">Studs</span>
-                </label>
-                <label class="filter-option">
-                  <input type="checkbox" value="hoops" data-filter="style">
-                  <span class="filter-option__text">Hoops</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="filters__group">
-              <h3 class="filters__group-title">Material</h3>
-              <div class="filters__options">
-                <label class="filter-option">
-                  <input type="checkbox" value="gold-plated" data-filter="material">
-                  <span class="filter-option__text">Gold Plated</span>
-                </label>
-                <label class="filter-option">
-                  <input type="checkbox" value="silver" data-filter="material">
-                  <span class="filter-option__text">Silver</span>
-                </label>
-                <label class="filter-option">
-                  <input type="checkbox" value="oxidised" data-filter="material">
-                  <span class="filter-option__text">Oxidised</span>
-                </label>
-                <label class="filter-option">
-                  <input type="checkbox" value="kundan" data-filter="material">
-                  <span class="filter-option__text">Kundan</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="filters__group">
-              <h3 class="filters__group-title">Price Range</h3>
-              <div class="filters__options">
-                <label class="filter-option">
-                  <input type="checkbox" value="0-30" data-filter="price">
-                  <span class="filter-option__text">$0 - $30</span>
-                </label>
-                <label class="filter-option">
-                  <input type="checkbox" value="30-60" data-filter="price">
-                  <span class="filter-option__text">$30 - $60</span>
-                </label>
-                <label class="filter-option">
-                  <input type="checkbox" value="60-120" data-filter="price">
-                  <span class="filter-option__text">$60 - $120</span>
-                </label>
-                <label class="filter-option">
-                  <input type="checkbox" value="120+" data-filter="price">
-                  <span class="filter-option__text">$120+</span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Collection Grid -->
-    <section class="collection-grid">
-      <div class="container">
-        <div class="collection-toolbar">
-          <div class="collection-toolbar__results">
-            <span data-results-count>32</span> products
-          </div>
-          <div class="collection-toolbar__sort">
-            <label for="sort-select">Sort by:</label>
-            <select id="sort-select" data-sort-select>
-              <option value="featured">Featured</option>
-              <option value="price-low-high">Price: Low to High</option>
-              <option value="price-high-low">Price: High to Low</option>
-              <option value="newest">Newest</option>
-              <option value="name-a-z">Name: A to Z</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="products-grid" data-products-grid>
+          <!-- Mobile Filter Backdrop -->
+          <div class="collection-backdrop" data-filter-backdrop></div>
           
-          <article class="product-card" data-product data-style="jhumka" data-material="gold-plated" data-price="45">
-            <div class="product-card__image-wrapper">
-              <img src="https://chandnijewellery.com.au/cdn/shop/files/Kalyani_White.jpg?width=400" alt="Traditional Gold Jhumkas" class="product-card__image" loading="lazy">
-              <div class="product-card__badges">
-                <span class="product-badge product-badge--bestseller">Bestseller</span>
+          <!-- Sidebar Filters -->
+          <aside class="collection-sidebar" id="collectionSidebar">
+            <div class="collection-sidebar__inner">
+              
+              <!-- Mobile Filter Header -->
+              <div class="collection-sidebar__header mobile-only">
+                <h2 class="collection-sidebar__title">Filters</h2>
+                <button type="button" class="collection-sidebar__close" aria-label="Close filters" data-filter-close>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M2 2L18 18M18 2L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </button>
               </div>
-              <div class="product-card__actions">
-                <button class="product-card__action" aria-label="Quick view" data-quick-view>
-                  <svg width="18" height="18" viewBox="0 0 18 18">
-                    <path d="M9 3C5 3 1.73 5.11 1 9c.73 3.89 4 6 8 6s7.27-2.11 8-6c-.73-3.89-4-6-8-6z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                    <circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              
+              <!-- Desktop Filter Header -->
+              <div class="collection-sidebar__header desktop-only">
+                <h2 class="collection-sidebar__title">Filter Products</h2>
+              </div>
+              
+              <!-- Filter: Category -->
+              <div class="filter-group">
+                <button type="button" class="filter-group__header" aria-expanded="true" data-filter-toggle>
+                  <span class="filter-group__title">Category</span>
+                  <svg class="filter-group__icon" width="12" height="12" viewBox="0 0 12 12">
+                    <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5"/>
                   </svg>
                 </button>
-                <button class="product-card__action" aria-label="Add to wishlist" data-wishlist>
-                  <svg width="18" height="18" viewBox="0 0 18 18">
-                    <path d="M9 15.5L7.795 14.39C4.26 11.18 2 9.06 2 6.5C2 4.5 3.5 3 5.5 3C6.54 3 7.54 3.5 8.05 4.24h1.9C10.46 3.5 11.46 3 12.5 3C14.5 3 16 4.5 16 6.5C16 9.06 13.74 11.18 10.205 14.39L9 15.5Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <div class="filter-group__content">
+                  <ul class="filter-list">
+                    <li class="filter-item">
+                      <label class="filter-checkbox">
+                        <input type="checkbox" name="category" value="jhumka">
+                        <span class="filter-checkbox__box"></span>
+                        <span class="filter-checkbox__label">Jhumka</span>
+                        <span class="filter-checkbox__count">(12)</span>
+                      </label>
+                    </li>
+                    <li class="filter-item">
+                      <label class="filter-checkbox">
+                        <input type="checkbox" name="category" value="chandelier">
+                        <span class="filter-checkbox__box"></span>
+                        <span class="filter-checkbox__label">Chandelier</span>
+                        <span class="filter-checkbox__count">(8)</span>
+                      </label>
+                    </li>
+                    <li class="filter-item">
+                      <label class="filter-checkbox">
+                        <input type="checkbox" name="category" value="studs">
+                        <span class="filter-checkbox__box"></span>
+                        <span class="filter-checkbox__label">Studs</span>
+                        <span class="filter-checkbox__count">(15)</span>
+                      </label>
+                    </li>
+                    <li class="filter-item">
+                      <label class="filter-checkbox">
+                        <input type="checkbox" name="category" value="hoops">
+                        <span class="filter-checkbox__box"></span>
+                        <span class="filter-checkbox__label">Hoops</span>
+                        <span class="filter-checkbox__count">(10)</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Filter: Price -->
+              <div class="filter-group">
+                <button type="button" class="filter-group__header" aria-expanded="true" data-filter-toggle>
+                  <span class="filter-group__title">Price</span>
+                  <svg class="filter-group__icon" width="12" height="12" viewBox="0 0 12 12">
+                    <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5"/>
                   </svg>
                 </button>
+                <div class="filter-group__content">
+                  <ul class="filter-list">
+                    <li class="filter-item">
+                      <label class="filter-checkbox">
+                        <input type="checkbox" name="price" value="0-5000">
+                        <span class="filter-checkbox__box"></span>
+                        <span class="filter-checkbox__label">Under Rs. 5,000</span>
+                      </label>
+                    </li>
+                    <li class="filter-item">
+                      <label class="filter-checkbox">
+                        <input type="checkbox" name="price" value="5000-10000">
+                        <span class="filter-checkbox__box"></span>
+                        <span class="filter-checkbox__label">Rs. 5,000 - Rs. 10,000</span>
+                      </label>
+                    </li>
+                    <li class="filter-item">
+                      <label class="filter-checkbox">
+                        <input type="checkbox" name="price" value="10000-20000">
+                        <span class="filter-checkbox__box"></span>
+                        <span class="filter-checkbox__label">Rs. 10,000 - Rs. 20,000</span>
+                      </label>
+                    </li>
+                    <li class="filter-item">
+                      <label class="filter-checkbox">
+                        <input type="checkbox" name="price" value="20000+">
+                        <span class="filter-checkbox__box"></span>
+                        <span class="filter-checkbox__label">Over Rs. 20,000</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Filter: Color -->
+              <div class="filter-group">
+                <button type="button" class="filter-group__header" aria-expanded="true" data-filter-toggle>
+                  <span class="filter-group__title">Color</span>
+                  <svg class="filter-group__icon" width="12" height="12" viewBox="0 0 12 12">
+                    <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                </button>
+                <div class="filter-group__content">
+                  <ul class="filter-color-list">
+                    <li>
+                      <label class="filter-color">
+                        <input type="checkbox" name="color" value="gold">
+                        <span class="filter-color__swatch" style="background-color: #D4AF37;"></span>
+                        <span class="filter-color__label">Gold</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="filter-color">
+                        <input type="checkbox" name="color" value="silver">
+                        <span class="filter-color__swatch" style="background-color: #C0C0C0;"></span>
+                        <span class="filter-color__label">Silver</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="filter-color">
+                        <input type="checkbox" name="color" value="pink">
+                        <span class="filter-color__swatch" style="background-color: #FFC0CB;"></span>
+                        <span class="filter-color__label">Pink</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="filter-color">
+                        <input type="checkbox" name="color" value="green">
+                        <span class="filter-color__swatch" style="background-color: #228B22;"></span>
+                        <span class="filter-color__label">Green</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="filter-color">
+                        <input type="checkbox" name="color" value="multi">
+                        <span class="filter-color__swatch filter-color__swatch--multi"></span>
+                        <span class="filter-color__label">Multi</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Filter: Availability -->
+              <div class="filter-group">
+                <button type="button" class="filter-group__header" aria-expanded="true" data-filter-toggle>
+                  <span class="filter-group__title">Availability</span>
+                  <svg class="filter-group__icon" width="12" height="12" viewBox="0 0 12 12">
+                    <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                </button>
+                <div class="filter-group__content">
+                  <ul class="filter-list">
+                    <li class="filter-item">
+                      <label class="filter-checkbox">
+                        <input type="checkbox" name="availability" value="in-stock" checked>
+                        <span class="filter-checkbox__box"></span>
+                        <span class="filter-checkbox__label">In Stock</span>
+                      </label>
+                    </li>
+                    <li class="filter-item">
+                      <label class="filter-checkbox">
+                        <input type="checkbox" name="availability" value="out-of-stock">
+                        <span class="filter-checkbox__box"></span>
+                        <span class="filter-checkbox__label">Out of Stock</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Clear Filters -->
+              <div class="filter-actions">
+                <button type="button" class="btn btn--secondary btn--full" data-filter-clear>Clear All Filters</button>
+              </div>
+              
+            </div>
+          </aside>
+          
+          <!-- Product Grid -->
+          <div class="collection-main">
+            
+            <!-- Toolbar -->
+            <div class="collection-toolbar">
+              <div class="collection-toolbar__left">
+                <button type="button" class="collection-filter-toggle" data-filter-toggle>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M2 4H16M4 9H14M6 14H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span>Filters</span>
+                </button>
+                <div class="collection-results">
+                  <span data-product-count>36</span> products
+                </div>
+              </div>
+              
+              <div class="collection-toolbar__right">
+                <div class="collection-sort">
+                  <label for="sortSelect" class="collection-sort__label">Sort by:</label>
+                  <select id="sortSelect" class="collection-sort__select" data-sort-select>
+                    <option value="featured">Featured</option>
+                    <option value="newest">Newest</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="title-asc">A-Z</option>
+                    <option value="title-desc">Z-A</option>
+                  </select>
+                </div>
+                
+                <div class="collection-view desktop-only">
+                  <button type="button" class="collection-view__btn is-active" aria-label="Grid view" data-view="grid">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <rect x="1" y="1" width="6" height="6" stroke="currentColor" stroke-width="1.5"/>
+                      <rect x="11" y="1" width="6" height="6" stroke="currentColor" stroke-width="1.5"/>
+                      <rect x="1" y="11" width="6" height="6" stroke="currentColor" stroke-width="1.5"/>
+                      <rect x="11" y="11" width="6" height="6" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                  </button>
+                  <button type="button" class="collection-view__btn" aria-label="List view" data-view="list">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <path d="M1 3H17M1 9H17M1 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="product-card__content">
-              <h3 class="product-card__title">Traditional Gold Jhumkas</h3>
-              <p class="product-card__variant">Gold Plated | Jhumka Style</p>
-              <div class="product-card__price">
-                <span class="price">$45.00</span>
-              </div>
-              <button class="product-card__add-to-cart btn btn--primary btn--small" data-add-to-cart>
-                Add to Cart
+            
+            <!-- Active Filters -->
+            <div class="active-filters" data-active-filters hidden>
+              <div class="active-filters__list"></div>
+              <button type="button" class="active-filters__clear" data-filter-clear-all>Clear all</button>
+            </div>
+            
+            <!-- Product Grid -->
+            <div class="product-grid collection-grid" data-product-grid>
+              
+              <!-- Product 1 -->
+              <article class="product-card" data-product-card>
+                <div class="product-card__media">
+                  <span class="product-card__badge product-card__badge--bestseller">Bestseller</span>
+                  <a href="../product.html" class="product-card__link">
+                    <img src="https://chandnijewellery.com.au/cdn/shop/files/Kalyani_White.jpg?width=600" alt="Traditional Gold Jhumkas" class="product-card__image product-card__image--primary" width="600" height="600" loading="lazy">
+                  </a>
+                  <div class="product-card__actions">
+                    <button type="button" class="product-card__action product-card__wishlist" aria-label="Add to wishlist">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 17.5L8.79 16.39C4.14 12.18 1 9.36 1 5.95C1 3.13 3.23 1 6.05 1C7.66 1 9.21 1.74 10 2.93C10.79 1.74 12.34 1 13.95 1C16.77 1 19 3.13 19 5.95C19 9.36 15.86 12.18 11.21 16.39L10 17.5Z" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </button>
+                    <button type="button" class="product-card__action product-card__quickview" aria-label="Quick view">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M1 10C1 10 4 4 10 4C16 4 19 10 19 10C19 10 16 16 10 16C4 16 1 10 1 10Z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </button>
+                  </div>
+                  <button type="button" class="product-card__add-btn" data-quick-add>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    <span>Add to Cart</span>
+                  </button>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__meta">
+                    <span class="product-card__colors">3 colors</span>
+                  </div>
+                  <h3 class="product-card__title">
+                    <a href="../product.html">Traditional Gold Jhumkas</a>
+                  </h3>
+                  <div class="product-card__price">
+                    <span class="product-card__price-current">Rs. 4,500.00 PKR</span>
+                  </div>
+                </div>
+              </article>
+              
+              <!-- Product 2 -->
+              <article class="product-card" data-product-card>
+                <div class="product-card__media">
+                  <a href="../product.html" class="product-card__link">
+                    <img src="https://chandnijewellery.com.au/cdn/shop/files/Parmi_Blue.jpg?width=600" alt="Kundan Chandelier Earrings" class="product-card__image product-card__image--primary" width="600" height="600" loading="lazy">
+                  </a>
+                  <div class="product-card__actions">
+                    <button type="button" class="product-card__action product-card__wishlist" aria-label="Add to wishlist">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 17.5L8.79 16.39C4.14 12.18 1 9.36 1 5.95C1 3.13 3.23 1 6.05 1C7.66 1 9.21 1.74 10 2.93C10.79 1.74 12.34 1 13.95 1C16.77 1 19 3.13 19 5.95C19 9.36 15.86 12.18 11.21 16.39L10 17.5Z" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </button>
+                    <button type="button" class="product-card__action product-card__quickview" aria-label="Quick view">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M1 10C1 10 4 4 10 4C16 4 19 10 19 10C19 10 16 16 10 16C4 16 1 10 1 10Z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </button>
+                  </div>
+                  <button type="button" class="product-card__add-btn" data-quick-add>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    <span>Add to Cart</span>
+                  </button>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__meta">
+                    <span class="product-card__colors">4 colors</span>
+                  </div>
+                  <h3 class="product-card__title">
+                    <a href="../product.html">Kundan Chandelier Earrings</a>
+                  </h3>
+                  <div class="product-card__price">
+                    <span class="product-card__price-current">Rs. 12,500.00 PKR</span>
+                  </div>
+                </div>
+              </article>
+              
+              <!-- Product 3 -->
+              <article class="product-card" data-product-card>
+                <div class="product-card__media">
+                  <span class="product-card__badge product-card__badge--new">New</span>
+                  <a href="../product.html" class="product-card__link">
+                    <img src="https://chandnijewellery.com.au/cdn/shop/files/NaishaPink.jpg?width=600" alt="Pearl Drop Studs" class="product-card__image product-card__image--primary" width="600" height="600" loading="lazy">
+                  </a>
+                  <div class="product-card__actions">
+                    <button type="button" class="product-card__action product-card__wishlist" aria-label="Add to wishlist">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 17.5L8.79 16.39C4.14 12.18 1 9.36 1 5.95C1 3.13 3.23 1 6.05 1C7.66 1 9.21 1.74 10 2.93C10.79 1.74 12.34 1 13.95 1C16.77 1 19 3.13 19 5.95C19 9.36 15.86 12.18 11.21 16.39L10 17.5Z" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </button>
+                    <button type="button" class="product-card__action product-card__quickview" aria-label="Quick view">
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M1 10C1 10 4 4 10 4C16 4 19 10 19 10C19 10 16 16 10 16C4 16 1 10 1 10Z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </button>
+                  </div>
+                  <button type="button" class="product-card__add-btn" data-quick-add>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    <span>Add to Cart</span>
+                  </button>
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__meta">
+                    <span class="product-card__colors">9 colors</span>
+                  </div>
+                  <h3 class="product-card__title">
+                    <a href="../product.html">Pearl Drop Studs</a>
+                  </h3>
+                  <div class="product-card__price">
+                    <span class="product-card__price-current">Rs. 3,200.00 PKR</span>
+                  </div>
+                </div>
+              </article>
+              
+            </div>
+            
+            <!-- Pagination -->
+            <nav class="pagination" aria-label="Collection pagination">
+              <button class="pagination__btn pagination__btn--prev" disabled>
+                <svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Previous
               </button>
-            </div>
-          </article>
-
-          <article class="product-card" data-product data-style="chandelier" data-material="kundan" data-price="125">
-            <div class="product-card__image-wrapper">
-              <img src="https://chandnijewellery.com.au/cdn/shop/files/Kalyani_White.jpg?width=400" alt="Kundan Chandelier Earrings" class="product-card__image" loading="lazy">
-              <div class="product-card__actions">
-                <button class="product-card__action" aria-label="Quick view" data-quick-view>
-                  <svg width="18" height="18" viewBox="0 0 18 18">
-                    <path d="M9 3C5 3 1.73 5.11 1 9c.73 3.89 4 6 8 6s7.27-2.11 8-6c-.73-3.89-4-6-8-6z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                    <circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                  </svg>
-                </button>
-                <button class="product-card__action" aria-label="Add to wishlist" data-wishlist>
-                  <svg width="18" height="18" viewBox="0 0 18 18">
-                    <path d="M9 15.5L7.795 14.39C4.26 11.18 2 9.06 2 6.5C2 4.5 3.5 3 5.5 3C6.54 3 7.54 3.5 8.05 4.24h1.9C10.46 3.5 11.46 3 12.5 3C14.5 3 16 4.5 16 6.5C16 9.06 13.74 11.18 10.205 14.39L9 15.5Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                  </svg>
-                </button>
+              <div class="pagination__numbers">
+                <button class="pagination__number pagination__number--active">1</button>
+                <button class="pagination__number">2</button>
+                <button class="pagination__number">3</button>
               </div>
-            </div>
-            <div class="product-card__content">
-              <h3 class="product-card__title">Kundan Chandelier Earrings</h3>
-              <p class="product-card__variant">Kundan | Chandelier Style</p>
-              <div class="product-card__price">
-                <span class="price">$125.00</span>
-              </div>
-              <button class="product-card__add-to-cart btn btn--primary btn--small" data-add-to-cart>
-                Add to Cart
+              <button class="pagination__btn pagination__btn--next">
+                Next
+                <svg width="16" height="16" viewBox="0 0 16 16"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
               </button>
-            </div>
-          </article>
-
-        </div>
-
-        <!-- Pagination -->
-        <nav class="pagination" aria-label="Collection pagination">
-          <button class="pagination__btn pagination__btn--prev" disabled>
-            <svg width="16" height="16" viewBox="0 0 16 16">
-              <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            Previous
-          </button>
-          <div class="pagination__numbers">
-            <button class="pagination__number pagination__number--active">1</button>
-            <button class="pagination__number">2</button>
-            <button class="pagination__number">3</button>
+            </nav>
           </div>
-          <button class="pagination__btn pagination__btn--next">
-            Next
-            <svg width="16" height="16" viewBox="0 0 16 16">
-              <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </button>
-        </nav>
+        </div>
       </div>
     </section>
 
@@ -358,6 +544,52 @@
       </div>
     </div>
   </footer>
+
+  <!-- Search Modal -->
+  <div class="modal modal--search" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="searchModalTitle">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title" id="searchModalTitle">Search</h2>
+        <button type="button" class="modal__close" aria-label="Close search" data-modal-close>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 2L18 18M18 2L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal__body">
+        <form class="search-form" action="../collection.html" method="GET" role="search" data-search-form>
+          <div class="search-form__input-wrapper">
+            <svg class="search-form__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5" />
+              <path d="M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <input type="search" name="q" class="search-form__input" placeholder="Search for products..."
+              autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-search-input>
+            <button type="button" class="search-form__clear" aria-label="Clear search" data-search-clear hidden>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.1" />
+                <path d="M5 5L11 11M11 5L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <div class="search-results" data-search-results>
+          <div class="search-results__popular">
+            <h3 class="search-results__heading">Popular Searches</h3>
+            <ul class="search-results__tags">
+              <li><a href="bangles.html" class="search-results__tag">Bangles</a></li>
+              <li><a href="necklaces.html" class="search-results__tag">Necklace Sets</a></li>
+              <li><a href="tikka_set.html" class="search-results__tag">Tikka Sets</a></li>
+              <li><a href="earrings.html" class="search-results__tag">Earrings</a></li>
+              <li><a href="payals.html" class="search-results__tag">Payals</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="../../js/app.js"></script>
