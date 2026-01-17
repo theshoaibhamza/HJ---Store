@@ -1,0 +1,15 @@
+// {
+//   "name": "mfcj",
+//   "version": "1.0.0",
+//   "description": "A complete, production-ready frontend implementation for Chandni Jewellery e-commerce website, built with modern HTML, CSS, and JavaScript.",
+//   "main": "index.js",
+//   "scripts": {
+//     "test": "echo \"Error: no test specified\" && exit 1"
+//   },
+//   "keywords": [],
+//   "author": "",
+//   "license": "ISC",
+//   "devDependencies": {
+//     "puppeteer": "^24.34.0"
+//   }
+// }
