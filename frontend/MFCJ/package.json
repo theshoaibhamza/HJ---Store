@@ -1,0 +1,34 @@
+{
+  "name": "chandni-jewellery-frontend",
+  "version": "1.0.0",
+  "description": "A complete, production-ready frontend implementation for Chandni Jewellery e-commerce website, built with modern HTML, CSS, and JavaScript. Integrated with a comprehensive Node.js/Express/MongoDB backend API for full e-commerce functionality.",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chandni",
+    "jewellery",
+    "jewelry",
+    "e-commerce",
+    "frontend",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Chandni Jewellery Team",
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer": "^24.34.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/chandni-jewellery-frontend"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/chandni-jewellery-frontend/issues"
+  },
+  "homepage": "https://chandnijewellery.com.au"
+}

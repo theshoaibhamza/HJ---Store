@@ -1,0 +1,50 @@
+/* Navigation Component */
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__link {
+  display: block;
+  padding: 0.5rem 0;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: #6d4e35;
+}
+
+.nav__link--active {
+  color: #6d4e35;
+  border-bottom: 2px solid #6d4e35;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.breadcrumb__item {
+  color: #666;
+}
+
+.breadcrumb__item--active {
+  color: #333;
+  font-weight: 500;
+}
+
+.breadcrumb__separator {
+  color: #ccc;
+}

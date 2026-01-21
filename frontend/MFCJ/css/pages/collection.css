@@ -1,0 +1,48 @@
+/* Collection Page Styles */
+.collection-page {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.collection-header {
+  text-align: center;
+  padding: 3rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.collection-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 0.5rem;
+}
+
+.collection-subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+.collection-filters {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}

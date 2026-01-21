@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Chandni Jewellery</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/base/main.css">
+
+    <style>
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .auth-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .auth-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .auth-subtitle {
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #6d4e35;
+            box-shadow: 0 0 0 3px rgba(109, 78, 53, 0.1);
+        }
+
+        .form-error {
+            background: #fee;
+            border: 1px solid #fcc;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            color: #c53030;
+            font-size: 0.875rem;
+            display: none;
+        }
+
+        .password-strength {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .strength-bar {
+            height: 3px;
+            background: #eee;
+            border-radius: 2px;
+            margin: 0.25rem 0;
+            overflow: hidden;
+        }
+
+        .strength-fill {
+            height: 100%;
+            background: #f56565;
+            transition: all 0.3s;
+            width: 0;
+        }
+
+        .strength-fill.weak {
+            background: #f56565;
+            width: 33%;
+        }
+
+        .strength-fill.medium {
+            background: #ed8936;
+            width: 66%;
+        }
+
+        .strength-fill.strong {
+            background: #48bb78;
+            width: 100%;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: #6d4e35;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #5a3d28;
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .loading-spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .auth-links {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .auth-links a {
+            color: #6d4e35;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-home {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: #666;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .back-to-home:hover {
+            color: #6d4e35;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .auth-container {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+                border-radius: 8px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .back-to-home {
+                position: static;
+                margin-bottom: 1rem;
+                justify-content: center;
+            }
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            padding: 1rem 1.5rem;
+            max-width: 400px;
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.is-visible {
+            transform: translateX(0);
+        }
+
+        .notification--success {
+            border-left: 4px solid #48bb78;
+        }
+
+        .notification--error {
+            border-left: 4px solid #f56565;
+        }
+
+        .notification__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .notification__close {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-page">
+        <a href="/" class="back-to-home">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 2L2 8h6v6h4V8h6z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Back to Home
+        </a>
+
+        <div class="auth-container">
+            <div class="auth-header">
+                <img src="https://chandnijewellery.com.au/cdn/shop/files/Untitled_design_2.png" alt="Chandni Jewellery"
+                    class="auth-logo">
+                <h1 class="auth-title">Create Account</h1>
+                <p class="auth-subtitle">Join us to explore beautiful jewelry</p>
+            </div>
+
+            <form id="registerForm" novalidate>
+                <div class="form-error"></div>
+
+                <div class="form-group">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter First Name"
+                        class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name"
+                        class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Email Address" class="form-input"
+                        required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber" class="form-label">Phone Number (Optional)</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number"
+                        class="form-input" autocomplete="tel">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Password" class="form-input"
+                        required autocomplete="new-password">
+                    <div class="password-requirements" style="margin-top: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 4px; font-size: 0.875rem;">
+                        <p style="margin: 0 0 0.5rem 0; font-weight: 500; color: #333;">Password must contain:</p>
+                        <ul style="margin: 0; padding-left: 1.5rem; list-style: none;">
+                            <li id="req-length" style="margin: 0.25rem 0; color: #dc3545;">
+                                <span class="req-icon">✗</span> At least 6 characters
+                            </li>
+                            <li id="req-uppercase" style="margin: 0.25rem 0; color: #dc3545;">
+                                <span class="req-icon">✗</span> One uppercase letter (A-Z)
+                            </li>
+                            <li id="req-lowercase" style="margin: 0.25rem 0; color: #dc3545;">
+                                <span class="req-icon">✗</span> One lowercase letter (a-z)
+                            </li>
+                            <li id="req-number" style="margin: 0.25rem 0; color: #dc3545;">
+                                <span class="req-icon">✗</span> One number (0-9)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password"
+                        class="form-input" required autocomplete="new-password">
+                </div>
+
+                <button type="submit" class="btn">
+                    Create Account
+                </button>
+            </form>
+
+            <div class="auth-links">
+                <p>Already have an account? <a href="login.html">Sign in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { authController } from '../js/controllers/AuthController.js';
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Password validation
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+
+            if (passwordInput) {
+                passwordInput.addEventListener('input', (e) => {
+                    const password = e.target.value;
+                    validatePasswordRequirements(password);
+                });
+            }
+
+            // Confirm password validation
+            if (confirmPasswordInput) {
+                confirmPasswordInput.addEventListener('input', (e) => {
+                    const password = passwordInput.value;
+                    const confirmPassword = e.target.value;
+                    
+                    if (confirmPassword && password !== confirmPassword) {
+                        confirmPasswordInput.setCustomValidity('Passwords do not match');
+                        confirmPasswordInput.style.borderColor = '#dc3545';
+                    } else {
+                        confirmPasswordInput.setCustomValidity('');
+                        confirmPasswordInput.style.borderColor = '';
+                    }
+                });
+            }
+
+            console.log('Register page loaded');
+        });
+
+        function validatePasswordRequirements(password) {
+            // Check length
+            const lengthReq = document.getElementById('req-length');
+            if (password.length >= 6) {
+                updateRequirement(lengthReq, true);
+            } else {
+                updateRequirement(lengthReq, false);
+            }
+
+            // Check uppercase
+            const uppercaseReq = document.getElementById('req-uppercase');
+            if (/[A-Z]/.test(password)) {
+                updateRequirement(uppercaseReq, true);
+            } else {
+                updateRequirement(uppercaseReq, false);
+            }
+
+            // Check lowercase
+            const lowercaseReq = document.getElementById('req-lowercase');
+            if (/[a-z]/.test(password)) {
+                updateRequirement(lowercaseReq, true);
+            } else {
+                updateRequirement(lowercaseReq, false);
+            }
+
+            // Check number
+            const numberReq = document.getElementById('req-number');
+            if (/\d/.test(password)) {
+                updateRequirement(numberReq, true);
+            } else {
+                updateRequirement(numberReq, false);
+            }
+        }
+
+        function updateRequirement(element, isValid) {
+            if (!element) return;
+            
+            const icon = element.querySelector('.req-icon');
+            if (isValid) {
+                element.style.color = '#28a745';
+                if (icon) icon.textContent = '✓';
+            } else {
+                element.style.color = '#dc3545';
+                if (icon) icon.textContent = '✗';
+            }
+        }
+    </script>
+</body>
+
+</html>

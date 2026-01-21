@@ -1,0 +1,80 @@
+/**
+ * =====================================================
+ * CHANDNI JEWELLERY - MAIN STYLESHEET
+ * =====================================================
+ * 
+ * Table of Contents:
+ * 1. Base Styles
+ * 2. Layout
+ * 3. Components
+ * 4. Pages
+ * 5. Utilities
+ * =====================================================
+ */
+
+/* Base Styles */
+@import url('reset.css');
+@import url('variable.css');
+@import url('typography.css');
+
+/* Layout */
+@import url('layout/grid.css');
+@import url('layout/header.css');
+@import url('layout/footer.css');
+@import url('layout/section.css');
+
+/* Components */
+@import url('components/buttons.css');
+@import url('components/cards.css');
+@import url('components/forms.css');
+@import url('components/modals.css');
+@import url('components/navigation.css');
+@import url('components/products.css');
+@import url('components/accordion.css');
+
+/* Auth Component from old folder (for cart notifications) */
+@import url('../components/auth.css');
+
+/* Pages */
+@import url('pages/home.css');
+@import url('pages/about.css');
+@import url('pages/collection.css');
+@import url('pages/contact.css');
+@import url('pages/product.css');
+
+/* Utilities */
+@import url('utilities/animation.css');
+@import url('utilities/helper.css');
+@import url('utilities/responsive.css');
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Firefox scrollbar */
+/*
+  Firefox-only custom scrollbar styling. These properties are ignored by Chrome <121, Safari, iOS Safari, and Samsung Internet.
+  WebKit browsers use ::-webkit-scrollbar selectors above for custom styling.
+*/
+html,
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-dark) var(--color-bg-alt);
+}
